@@ -16,11 +16,11 @@ let baseurl = "https://big-feelings.vercel.app";
 let data = [];
 
 async function main() {
-    // 👉 add code inside this function (Chapter 10) ...
-
-
-
-    // 👈
+    let data = []
+    async function main() {
+    data = await fetchFeelings();
+    console.log(data);
+    }
 }
 main();
 
