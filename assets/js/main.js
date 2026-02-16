@@ -20,6 +20,7 @@ async function main() {
     async function main() {
     data = await fetchFeelings();
     console.log(data);
+    await updateMap(data);
     }
 }
 main();
