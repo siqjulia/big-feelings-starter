@@ -68,8 +68,9 @@ async function fetchData(url) {
 function submitForm(e) {
     try {
         // 👉 add code inside this function (Chapter 10 wiki) ...
-
-        
+        e.preventDefault();
+        let data = getFormData();
+        console.log(data);
         // 👈
     } catch (e) {
         showSuccessMsg("Please add a feeling and select a location", "white");

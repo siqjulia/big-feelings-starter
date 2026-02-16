@@ -65,5 +65,26 @@ router.post("/api/feeling", async function (req, res) {
     res.json(data);
 });
 
+function submitForm(e) {
+    // step 1 - get form data
+    e.preventDefault();
+    let data = getFormData();
+    console.log(data);
+    // step 2 - create options object to send data
+    let options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    };
+     // step 3 - use fetch to send data
+     fetch(baseurl + "/api/feeling", options)
+     .then((response) => response.json())
+     .then(async (json) => {
+         await updateMap(json);
+         showSuccessMsg("Your feeling was added");
+     });
+}
 
-export default router;
+export default router;})
